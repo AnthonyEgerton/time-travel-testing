@@ -1,0 +1,7 @@
+build/
+xcuserdata/
+
+*.pbxuser
+*.perspective3
+*.DS_Store
+.*.swp
