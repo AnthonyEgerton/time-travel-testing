@@ -21,6 +21,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CYM-m4-Y4g">
                                 <rect key="frame" x="16" y="70.5" width="268" height="159.5"/>
                                 <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kXy-GE-Ex6">
+                                        <rect key="frame" x="116" y="18" width="37" height="37"/>
+                                        <color key="color" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Answer?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN3-Z7-h1G">
                                         <rect key="frame" x="0.0" y="20" width="268" height="32.5"/>
                                         <animations/>
@@ -48,12 +52,14 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="5tF-Ia-pgu" firstAttribute="width" relation="greaterThanOrEqual" secondItem="CYM-m4-Y4g" secondAttribute="width" multiplier="1:2" id="3xK-Dw-SYE"/>
+                                    <constraint firstItem="kXy-GE-Ex6" firstAttribute="centerY" secondItem="iN3-Z7-h1G" secondAttribute="centerY" id="ENh-dG-51Q"/>
                                     <constraint firstItem="5tF-Ia-pgu" firstAttribute="top" secondItem="iN3-Z7-h1G" secondAttribute="bottom" constant="42" id="Fou-wE-aoB"/>
                                     <constraint firstItem="iN3-Z7-h1G" firstAttribute="centerX" secondItem="CYM-m4-Y4g" secondAttribute="centerX" id="Pzr-Sx-lSn"/>
                                     <constraint firstItem="iN3-Z7-h1G" firstAttribute="top" secondItem="CYM-m4-Y4g" secondAttribute="top" constant="20" symbolic="YES" id="RLi-Nm-IOY"/>
                                     <constraint firstAttribute="trailing" secondItem="iN3-Z7-h1G" secondAttribute="trailing" id="U58-K5-sfh"/>
                                     <constraint firstItem="5tF-Ia-pgu" firstAttribute="centerX" secondItem="CYM-m4-Y4g" secondAttribute="centerX" id="Y1i-XI-8G4"/>
                                     <constraint firstItem="iN3-Z7-h1G" firstAttribute="leading" secondItem="CYM-m4-Y4g" secondAttribute="leading" id="gDN-bc-Fqa"/>
+                                    <constraint firstItem="kXy-GE-Ex6" firstAttribute="centerX" secondItem="iN3-Z7-h1G" secondAttribute="centerX" id="bWn-Bb-RI9"/>
                                     <constraint firstAttribute="bottom" secondItem="5tF-Ia-pgu" secondAttribute="bottom" constant="20" symbolic="YES" id="oVx-Ga-358"/>
                                 </constraints>
                             </view>
@@ -70,6 +76,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="300" height="300"/>
                     <connections>
+                        <outlet property="answerActivityIndicator" destination="kXy-GE-Ex6" id="cT3-rN-8ff"/>
                         <outlet property="answerLabel" destination="iN3-Z7-h1G" id="3S4-Ai-H3u"/>
                     </connections>
                 </viewController>
