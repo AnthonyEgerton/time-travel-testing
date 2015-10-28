@@ -1,8 +1,13 @@
 import Foundation
 
-func async(block: (() -> Void)) {
+func async(blocks: (() -> Void)..., then:(() -> Void)? = nil) {
     let queue = dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)
-    dispatch_async(queue, block)
+    let group = dispatch_group_create()
+    blocks.forEach {
+        dispatch_group_async(group, queue, $0)
+    }
+    guard let then = then else { return }
+    dispatch_group_notify(group, queue, then)
 }
 
 func sync_main(block: (() -> Void)) {

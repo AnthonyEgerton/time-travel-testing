@@ -13,15 +13,17 @@ private func middayOfDate(date: NSDate) -> NSDate {
 }
 
 class DeepThought {
-    func thinkDeeply() -> Answer {
+    func thinkDeeply(returnAnswer: (Answer) -> Void) {
         let now = date.now()
-        thinkAboutThis()
-        thinkAboutThat()
-        if beforeMidday(now) {
-            return morningAnswer
-        } else {
-            return afternoonAnswer
-        }
+        async(thinkAboutThis, thinkAboutThat, then: {
+            sync_main {
+                if beforeMidday(now) {
+                    returnAnswer(morningAnswer)
+                } else {
+                    returnAnswer(afternoonAnswer)
+                }
+            }
+        })
     }
     
     private let date: Date

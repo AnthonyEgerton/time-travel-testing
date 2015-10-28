@@ -4,16 +4,28 @@ import XCTest
 class DeepThoughtTests: XCTestCase {
     func testMorning() {
         dateProvider.fakeNow = morning
+        let expectAnswer = expectationWithDescription("Answer")
+        var answer: Answer! = nil
         
-        let answer = subject.thinkDeeply()
-        
+        subject.thinkDeeply {
+            answer = $0
+            expectAnswer.fulfill()
+        }
+        waitForExpectationsWithTimeout(10, handler: nil)
+
         XCTAssertEqual(String(answer), "42")
     }
     
     func testEvening() {
         dateProvider.fakeNow = evening
+        let expectAnswer = expectationWithDescription("Answer")
+        var answer: Answer! = nil
         
-        let answer = subject.thinkDeeply()
+        subject.thinkDeeply {
+            answer = $0
+            expectAnswer.fulfill()
+        }
+        waitForExpectationsWithTimeout(10, handler: nil)
         
         XCTAssertEqual(String(answer), "56")
     }

@@ -14,10 +14,10 @@
 		0310ED201B9E42DA001A3A7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0310ED1E1B9E42DA001A3A7A /* LaunchScreen.storyboard */; };
 		0310ED2B1B9E42DA001A3A7A /* DeepThoughtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0310ED2A1B9E42DA001A3A7A /* DeepThoughtTests.swift */; };
 		0310ED361B9E42DA001A3A7A /* TheAnswerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0310ED351B9E42DA001A3A7A /* TheAnswerUITests.swift */; };
+		031A04CA1BB357F4003E209D /* DeepThought.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A04C91BB357F4003E209D /* DeepThought.swift */; };
 		033007D61BE059EB0024A92A /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033007D51BE059EB0024A92A /* Async.swift */; };
 		0389DD4F1BAE4540004B31A2 /* AnswerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389DD4E1BAE4540004B31A2 /* AnswerService.swift */; };
 		0389DD511BAE4756004B31A2 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389DD501BAE4756004B31A2 /* Answer.swift */; };
-		031A04CA1BB357F4003E209D /* DeepThought.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A04C91BB357F4003E209D /* DeepThought.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +51,8 @@
 		0310ED311B9E42DA001A3A7A /* TheAnswerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheAnswerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0310ED351B9E42DA001A3A7A /* TheAnswerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAnswerUITests.swift; sourceTree = "<group>"; };
 		0310ED371B9E42DA001A3A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		033007D51BE059EB0024A92A /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		031A04C91BB357F4003E209D /* DeepThought.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepThought.swift; sourceTree = "<group>"; };
+		033007D51BE059EB0024A92A /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		0389DD4E1BAE4540004B31A2 /* AnswerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerService.swift; sourceTree = "<group>"; };
 		0389DD501BAE4756004B31A2 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		03AA56611BF9278B000CD7BF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -222,6 +222,7 @@
 				TargetAttributes = {
 					0310ED111B9E42D9001A3A7A = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = E3Y3CMDRGV;
 					};
 					0310ED251B9E42DA001A3A7A = {
 						CreatedOnToolsVersion = 7.0;
@@ -432,10 +433,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TheAnswer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AnthonyEgerton.TheAnswer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -443,10 +447,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TheAnswer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AnthonyEgerton.TheAnswer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
