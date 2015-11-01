@@ -23,6 +23,7 @@
                                 <subviews>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kXy-GE-Ex6">
                                         <rect key="frame" x="116" y="18" width="37" height="37"/>
+                                        <animations/>
                                         <color key="color" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Answer?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN3-Z7-h1G">
@@ -78,6 +79,7 @@
                     <connections>
                         <outlet property="answerActivityIndicator" destination="kXy-GE-Ex6" id="cT3-rN-8ff"/>
                         <outlet property="answerLabel" destination="iN3-Z7-h1G" id="3S4-Ai-H3u"/>
+                        <outlet property="tellMeButton" destination="5tF-Ia-pgu" id="C5b-aI-Ogx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

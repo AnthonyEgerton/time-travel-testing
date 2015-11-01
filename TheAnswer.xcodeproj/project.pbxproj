@@ -14,6 +14,7 @@
 		0310ED201B9E42DA001A3A7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0310ED1E1B9E42DA001A3A7A /* LaunchScreen.storyboard */; };
 		0310ED2B1B9E42DA001A3A7A /* AnswerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0310ED2A1B9E42DA001A3A7A /* AnswerServiceTests.swift */; };
 		0310ED361B9E42DA001A3A7A /* TheAnswerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0310ED351B9E42DA001A3A7A /* TheAnswerUITests.swift */; };
+		033007D61BE059EB0024A92A /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033007D51BE059EB0024A92A /* Async.swift */; };
 		0389DD4F1BAE4540004B31A2 /* AnswerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389DD4E1BAE4540004B31A2 /* AnswerService.swift */; };
 		0389DD511BAE4756004B31A2 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0389DD501BAE4756004B31A2 /* Answer.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		0310ED311B9E42DA001A3A7A /* TheAnswerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheAnswerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0310ED351B9E42DA001A3A7A /* TheAnswerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheAnswerUITests.swift; sourceTree = "<group>"; };
 		0310ED371B9E42DA001A3A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		033007D51BE059EB0024A92A /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		0389DD4E1BAE4540004B31A2 /* AnswerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerService.swift; sourceTree = "<group>"; };
 		0389DD501BAE4756004B31A2 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		03AA56611BF9278B000CD7BF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -145,6 +147,7 @@
 			children = (
 				0389DD4E1BAE4540004B31A2 /* AnswerService.swift */,
 				0389DD501BAE4756004B31A2 /* Answer.swift */,
+				033007D51BE059EB0024A92A /* Async.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				0310ED181B9E42DA001A3A7A /* MainViewController.swift in Sources */,
 				0310ED161B9E42DA001A3A7A /* AppDelegate.swift in Sources */,
 				0389DD4F1BAE4540004B31A2 /* AnswerService.swift in Sources */,
+				033007D61BE059EB0024A92A /* Async.swift in Sources */,
 				0389DD511BAE4756004B31A2 /* Answer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,6 +3,7 @@ import UIKit
 class MainViewController: UIViewController {
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var answerActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var tellMeButton: UIButton!
     private let answerService = AnswerService()
     
     private enum State {
@@ -15,11 +16,16 @@ class MainViewController: UIViewController {
             case .Busy: answerActivityIndicator.startAnimating()
             case .Idle: answerActivityIndicator.stopAnimating()
             }
+            answerLabel.hidden = answerActivityIndicator.isAnimating()
+            tellMeButton.enabled = !answerActivityIndicator.isAnimating()
         }
     }
     
     @IBAction func tellMeTheAnswer(sender: UIButton) {
-        let answer = answerService.whatIsTheAnswer()
-        answerLabel.text = String(answer)
+        state = .Busy
+        answerService.whatIsTheAnswer { (answer) in
+            self.state = .Idle
+            self.answerLabel.text = String(answer)
+        }
     }
 }

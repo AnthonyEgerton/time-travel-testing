@@ -3,7 +3,9 @@ import XCTest
 
 class AnswerServiceTests: XCTestCase {
     func testAnswer() {
-        let answer = subject.whatIsTheAnswer()
+        var answer: Answer! = nil
+        
+        subject.whatIsTheAnswer { answer = $0 }
         
         XCTAssertEqual(String(answer), "42")
     }

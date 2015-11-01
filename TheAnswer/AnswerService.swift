@@ -1,8 +1,11 @@
 import Foundation
 
 class AnswerService {
-    func whatIsTheAnswer() -> Answer {
-        return thinkDeeply()
+    func whatIsTheAnswer(returnAnswer: (Answer) -> Void) {
+        async {
+            let answer = self.thinkDeeply()
+            sync_main { returnAnswer(answer) }
+        }
     }
     
     private func thinkDeeply() -> Answer {
