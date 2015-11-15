@@ -12,23 +12,42 @@ private func middayOfDate(date: NSDate) -> NSDate {
     return NSCalendar.currentCalendar().dateBySettingHour(12, minute: 0, second: 0, ofDate: date, options: NSCalendarOptions())!
 }
 
-class DeepThought {
+class DeepThought: DownloadAnswerJSONOperationDelegate {
     func thinkDeeply(returnAnswer: (Answer) -> Void) {
-        let now = date.now()
-        async(thinkAboutThis, thinkAboutThat, then: {
-            sync_main {
-                if beforeMidday(now) {
-                    returnAnswer(morningAnswer)
-                } else {
-                    returnAnswer(afternoonAnswer)
+        if let answer = downloadedAnswer {
+            returnAnswer(answer)
+        } else {
+            let now = date.now()
+            async(thinkAboutThis, thinkAboutThat, then: {
+                sync_main {
+                    if beforeMidday(now) {
+                        returnAnswer(morningAnswer)
+                    } else {
+                        returnAnswer(afternoonAnswer)
+                    }
                 }
-            }
-        })
+            })
+        }
     }
     
+    func update() {
+        let operation = DownloadAnswerJSONOperation(downloader: downloader, delegate: self)
+        operationQueue.addOperation(operation)
+    }
+    
+    func updateAnswerTo(answer: Answer?) {
+        downloadedAnswer = answer
+    }
+    
+    var operationCount: Int { return operationQueue.operationCount }
+    
+    private var downloadedAnswer: Answer? = nil
+    private let operationQueue = NSOperationQueue()
     private let date: Date
-    init(date: Date = DateProvider()) {
+    private let downloader: Downloader
+    init(date: Date = DateProvider(), downloader: Downloader = SessionDownloader()) {
         self.date = date
+        self.downloader = downloader
     }
     
     private func thinkAboutThis() {
@@ -37,6 +56,18 @@ class DeepThought {
     
     private func thinkAboutThat() {
         sleep(2)
+    }
+}
+
+protocol Downloader {
+    func getDataFromURL(url: NSURL, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void)
+}
+
+private class SessionDownloader: Downloader {
+    func getDataFromURL(url: NSURL, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) {
+        let session = NSURLSession.sharedSession()
+        let dataTask = session.dataTaskWithURL(url, completionHandler: completionHandler)
+        dataTask.resume()
     }
 }
 
